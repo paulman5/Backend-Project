@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 25.0.1706.3
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DB-Layer1-Draftflex", "DB-Layer1-Draftflex.csproj", "{0904CDCC-4318-4DD5-B7CC-7CF93E06CD0F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0904CDCC-4318-4DD5-B7CC-7CF93E06CD0F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0904CDCC-4318-4DD5-B7CC-7CF93E06CD0F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0904CDCC-4318-4DD5-B7CC-7CF93E06CD0F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0904CDCC-4318-4DD5-B7CC-7CF93E06CD0F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {BEB59F0A-3F42-4A65-AE5C-BCB53D0302BC}
+	EndGlobalSection
+EndGlobal
