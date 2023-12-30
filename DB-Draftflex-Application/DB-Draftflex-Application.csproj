@@ -26,14 +26,12 @@
     <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="8.0.0" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Draftflex.Data\DB-Draftflex-API.csproj">
-      <GlobalPropertiesToRemove></GlobalPropertiesToRemove>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <Compile Remove="Migrations\20230909133705_CompanyTableUpdate.Designer.cs" />
     <Compile Remove="Migrations\20230909134859_CompanyModelUpdate.Designer.cs" />
     <Compile Remove="Migrations\20230911080314_LicenseId_Type_Change.cs" />
     <Compile Remove="Migrations\20230911080314_LicenseId_Type_Change.Designer.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Migrations\" />
   </ItemGroup>
 </Project>

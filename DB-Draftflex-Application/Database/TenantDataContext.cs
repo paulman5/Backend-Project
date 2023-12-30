@@ -2,10 +2,10 @@ using Microsoft.EntityFrameworkCore;
 
 namespace DB_Layer1_Draftflex.Data;
 
-public class TenantDbContext : DbContext
+public class TenantDataContext : DbContext
 {
     // This context is for looking up the tenant when a request comes in.
-    public TenantDbContext(DbContextOptions<TenantDbContext> options)
+    public TenantDataContext(DbContextOptions<TenantDataContext> options)
         : base(options)
     {
     }

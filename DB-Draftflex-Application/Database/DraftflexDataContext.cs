@@ -25,7 +25,7 @@ public class DraftflexDataContext : DbContext
     // Entities of our database
     public DbSet<User> Users { get; set; }
     public DbSet<Tenant> Tenants { get; set; }
-    public DbSet<License> License { get; set; }
+    public DbSet<License> Licenses { get; set; }
     public DbSet<Templates> Templates { get; set; }
     public DbSet<Unique_Document> UniqueDocuments { get; set; }
     

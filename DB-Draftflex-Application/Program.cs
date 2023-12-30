@@ -1,6 +1,8 @@
 using Microsoft.EntityFrameworkCore;
 using DB_Layer1_Draftflex;
 using DB_Layer1_Draftflex.Data;
+using DB_Layer1_Draftflex.Data.Features.Tenants;
+
 using dotenv.net;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Authorization;
@@ -28,13 +30,19 @@ builder.Services.AddDbContext<DraftflexDataContext>(
     options => options.UseNpgsql(builder.Configuration.GetConnectionString("DraftflexDb"),
         b => b.MigrationsAssembly("DB-Draftflex-Application")));
 
+builder.Services.AddDbContext<TenantDataContext>(
+    options => options.UseNpgsql(builder.Configuration.GetConnectionString("DraftflexDb"),
+        b => b.MigrationsAssembly("DB-Draftflex-Application")));
+
+builder.Services.AddScoped<ICurrentTenantService, CurrentTenantService>(); // Example registration
+
 builder.Services.AddAuthorization();
 
 builder.Services.AddAuthentication();
 
 builder.Services.AddControllers();
 
-var app = builder.Build();
+var app = builder.Build();;
 
 
 // Configure the HTTP request pipeline.

@@ -40,7 +40,7 @@ namespace DB_Layer1_Draftflex.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("License");
+                    b.ToTable("Licenses");
                 });
 
             modelBuilder.Entity("DB_Layer1_Draftflex.Data.Templates", b =>

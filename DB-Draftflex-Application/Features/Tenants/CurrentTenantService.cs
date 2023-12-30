@@ -5,10 +5,10 @@ namespace DB_Layer1_Draftflex.Data.Features.Tenants;
 public class CurrentTenantService : ICurrentTenantService
 {
     // Make it accessible for this class 
-    private readonly TenantDbContext _context; 
+    private readonly TenantDataContext _context; 
     public string? TenantId { get; set; }
 
-    public CurrentTenantService(TenantDbContext context)
+    public CurrentTenantService(TenantDataContext context)
     {
         _context = context;
     }
