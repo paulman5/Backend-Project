@@ -14,7 +14,6 @@ public class CurrentTenantService : ICurrentTenantService
     }
     public async Task<bool> SetTenant(string tenant)
     {
-
         var tenantInfo = await _context.Tenants.Where(x => x.Id == tenant).FirstOrDefaultAsync(); // check if tenant exists
         if (tenantInfo != null)
         {
@@ -25,6 +24,5 @@ public class CurrentTenantService : ICurrentTenantService
         {
             throw new Exception("Tenant invalid"); 
         }
-
     }
 }

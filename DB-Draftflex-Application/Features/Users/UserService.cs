@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 using DB_Layer1_Draftflex.Data;
+using Microsoft.EntityFrameworkCore;
 
 namespace DB_Layer1_Draftflex.Users;
 
@@ -12,16 +13,16 @@ namespace DB_Layer1_Draftflex.Users;
             _context = context;
         }
         
-        public IActionResult CreateUser(User user)
+        public async Task<IActionResult> CreateUser(User user)
         {
-            var existingUser = _context.Users.FirstOrDefault(u => u.Email == user.Email);
+            var existingUser = await _context.Users.FirstOrDefaultAsync(u => u.Email == user.Email);
             if (existingUser != null)
             {
                 return new OkObjectResult(existingUser);
             }
 
             _context.Users.Add(user);
-            _context.SaveChanges();
+            await _context.SaveChangesAsync();
             return new OkObjectResult(user);
         }
     }

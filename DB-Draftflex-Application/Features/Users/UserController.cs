@@ -5,8 +5,8 @@ using System.Security.Claims;
 
 namespace DB_Layer1_Draftflex.Users;
 
-[ApiController]
 [Route("api/users")]
+[ApiController]
 public class UserController : ControllerBase 
 {
     private readonly UserService _userService;
@@ -15,8 +15,7 @@ public class UserController : ControllerBase
     {
         _userService = userService;
     }
-[HttpDelete("/")]
-[Authorize]
+
 
 // [HttpGet("/me")]
 //     [Authorize]
@@ -26,21 +25,24 @@ public class UserController : ControllerBase
 //         var id = user.Claims.FirstOrDefault(c => c.Type == ClaimTypes.NameIdentifier)?.Value;
 //         var user = _userService.Users.FirstOrDefault(u => u.Sub == id);
 //         if (user == null)
+//                  {
+//                      return Notfound();
+//                  }
 //             // weird way to do it, but if you wanted to use 404 as a way to tell the spa to start the integration process /shrug
 //             return NotFound();
 //     
 //         return Ok(new UserDto { });
 //     }
-    
+
     [HttpPost("createUser")]
     public IActionResult PostUser(User user)
     {
-        if (ModelState.IsValid)
+        if (!ModelState.IsValid)
         {
-            var createdUser = _userService.CreateUser(user);
-            return Ok(createdUser); // Returning the created user as an Ok response
+            return BadRequest(ModelState);
         }
-        return BadRequest(ModelState);
+        var createdUser = _userService.CreateUser(user);
+        return Ok(createdUser); // Returning the created user as an Ok response
     }
 }
     
